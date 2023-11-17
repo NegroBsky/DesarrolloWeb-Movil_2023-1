@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 
 const getCurrentUser = async (req) => {
-  const cookie = req.cookies["jwt"];
+  const cookie = req.headers.authorization;
 
   if (!cookie) return null;
 
