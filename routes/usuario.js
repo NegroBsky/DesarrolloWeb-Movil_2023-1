@@ -34,5 +34,8 @@ router.post('/ingresar' , async (req, res) => {
         jwt: signedJWT,
     });
 });
+
+router.post("/current" , (req , res) => {
     
+})
 module.exports = router;
