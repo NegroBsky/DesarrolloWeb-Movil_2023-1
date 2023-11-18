@@ -1,33 +1,30 @@
 const mongoose = require('mongoose');
 
 const eventSchema = mongoose.Schema({
-    id: {
+    titulo: {
+        type: String,
+        required: true
+    },
+    nombreCandidatoUno: {
+        type: String,
+        required: true
+    },
+    votosCandidatoUno: {
         type: Number,
-        required: true
     },
-    nombre: {
+    nombreCandidatoDos: {
         type: String,
         required: true
     },
-    fecha: {
-        type: Date,
-        required: true
+    votosCandidatoDos: {
+        type: Number,
     },
-    candidato1: {
+    nombreCandidatoTres: {
         type: String,
         required: true
     },
-    candidato2: {
-        type: String,
-        required: true
-    },
-    candidato3: {
-        type: String,
-        required: true
-    },
-    candidato4: {
-        type: String,
-        required: true
+    votosCandidatoTres: {
+        type: Number,
     }
 });
 const Evento = module.exports = mongoose.model('Evento', eventSchema);
