@@ -48,9 +48,8 @@ router.post('/ingresar', async (req, res) => {
 router.get('/corriente', jwtAuthenticated, async (req, res) => {
     const currentUser = await getAuthenticatedUser(req);
     res.json({
-        success: true,
-        user: currentUser,
+        name: currentUser.nombre,
+        email: currentUser.correo,
     });
 });
-
 module.exports = router;

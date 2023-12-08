@@ -11,6 +11,7 @@ const eventSchema = mongoose.Schema({
     },
     votosCandidatoUno: {
         type: Number,
+        default: 0
     },
     nombreCandidatoDos: {
         type: String,
@@ -18,6 +19,7 @@ const eventSchema = mongoose.Schema({
     },
     votosCandidatoDos: {
         type: Number,
+        default: 0
     },
     nombreCandidatoTres: {
         type: String,
@@ -25,6 +27,12 @@ const eventSchema = mongoose.Schema({
     },
     votosCandidatoTres: {
         type: Number,
+        default: 0
+    },
+    estado: {
+        type: String,
+        default: 'Abierto'
     }
+
 });
 const Evento = module.exports = mongoose.model('Evento', eventSchema);

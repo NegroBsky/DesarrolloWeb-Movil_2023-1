@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{evento.nombre}}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    <h1 class="text-center">{{evento.nombre}}</h1>
+    <section>
+        <div class="container col-8 mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Candidato</th>
+                                <th>Votos</th>
+                                <th>Eleccion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{evento.candidato1}}</td>
+                                <td>{{evento.votos1}}</td>
+                                <td>
+                                    <form action="/votar" method="POST">
+                                        <input type="hidden" name="eventoId" value="{{evento.id}}">
+                                        <input type="hidden" name="candidatoId" value="{{evento.candidato1Id}}">
+                                        <button type="submit" class="btn btn-primary">Votar</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{evento.candidato2}}</td>
+                                <td>{{evento.votos2}}</td>
+                                <td>
+                                    <form action="/votar" method="POST">
+                                        <input type="hidden" name="eventoId" value="{{evento.id}}">
+                                        <input type="hidden" name="candidatoId" value="{{evento.candidato2Id}}">
+                                        <button type="submit" class="btn btn-primary">Votar</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{evento.candidato3}}</td>
+                                <td>{{evento.votos3}}</td>
+                                <td>
+                                    <form action="/votar" method="POST">
+                                        <input type="hidden" name="eventoId" value="{{evento.id}}">
+                                        <input type="hidden" name="candidatoId" value="{{evento.candidato3Id}}">
+                                        <button type="submit" class="btn btn-primary">Votar</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
