@@ -11,7 +11,11 @@ require('dotenv').config();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+
+app.use(cors({
+  origin: '*', // This will allow all origins
+}));
+
 app.set('view engine', 'ejs');
 
 const dbURI = process.env.DB_URI;
